@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="/css/assignwork.css">
+
+<div id="main-div">
+    <h1>Assign Review to Employees</h1>
+    <hr>
+    <form action="/api/review/" method="post">
+        <label for="to">Recipient : </label>
+        <select name="to" id="recipient">
+            <%for(let user of employee){%>
+                <option value="<%=user.id%>"><%=user.name%></option>
+                <%}%>
+            
+        </select>
+        
+        <label for="from">Reviewer : </label>
+        <select name="from" id="Reviewer">
+            <%for(let user of employee){%>
+                <option value="<%=user.id%>"><%=user.name%></option>
+                <%}%>
+            
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+</div>

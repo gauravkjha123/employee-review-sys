@@ -1,0 +1,46 @@
+<header id="main-header">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Employee Review System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <% if(!locals.user) { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/sign-up">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/sign-in">Sign In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/company/create-company">Create Company</a>
+                    </li>
+                <% } else { %>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary" href="/user/sign-out">Sign Out</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary" href="/review">Home</a>
+                    </li>
+                    <%if(locals.user.role==1) {%>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary" href="/review/all-reviews">Review Panel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary" href="/user">Employee View</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary" href="/review/assign">Assign Review</a>
+                        </li>
+                    <% } %>
+        
+                <%}%>
+            </ul>
+        </div>
+    </div>
+</nav>
+</header>

@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="/css/employeesection.css">
+
+<div id="main-div">
+    <h1>All Employees List</h1>
+    <hr>
+    <div id="headings">
+        <p>Name</p>
+        <p>Email</p>
+        <p>Password</p>
+    </div>
+    <hr>
+
+    <%for(let user of employees){%>
+
+        <div>
+            <input type="text" name="name" placeholder="Name" value="<%=user.name%>" required>
+            <input type="email" name="email" placeholder="Email" value="<%=user.email%>" required>
+            <button type="button">Update</button>
+            <button type="button">Delete</button>
+            <% if (user.permission === 'admin') { %>
+                <button type="button">
+                    Remove Admin
+                </button>
+            <% } else { %>
+                <button type="button">
+                    Make Admin
+                </button>
+            <% } %>
+        </div>
+    <%}%>
+   
+</div>

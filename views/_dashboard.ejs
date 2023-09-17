@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/css/home.css">
+<div id="assignedReview" class="review-section">
+<h2>Assigned Reviews</h2>
+<div id="assignReviews-div">
+
+    <%for(let AssignedReview of from){%>
+        <form action="completeReview" method="post">
+            <label for="">To : <%=AssignedReview.to.name%></label>
+            <textarea id="message" name="message" placeholder="Enter Review comments" required></textarea>
+            <input type="hidden" name="toUser" value="<%=AssignedReview.to.id%>">
+            <button type="button">Submit</button>
+        </form>
+            <%}%> 
+</div>
+
+</div>
+<div id="myReview" class="review-section">
+    <h2>My Reviews</h2>
+    
+    <%for(let MyReview of to){%>
+    <div id="myReviews-div">
+        <p>From : <%=MyReview.from.name%></p>
+        <p>Review : <span ><%=MyReview.message%></span></span>
+          <hr>
+          <%}%> 
+    </div><p>
+  
+</div>
