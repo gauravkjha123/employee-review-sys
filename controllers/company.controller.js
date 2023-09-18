@@ -34,7 +34,9 @@ export const createCompany = async (req, res, next) => {
 
       const newUser = new User({...companyData,companyId:newCompany._id,role:roles.ADMIN});
       await newUser.save();
-  
+      newCompany.users.push(newUser)
+      await newCompany.save();
+
       req.flash("success_msg", "Resistaration succefully");
       return res.redirect("/user/sign-in");
     } catch (error) {

@@ -26,7 +26,8 @@ const userSchema = new mongoose.Schema({
     type:Number,
     enum:Object.values(roles),
     default:roles.EMPLOYEE
-  }
+  },
+  isDeleted: { type: Boolean, defaults: false }
 }, {
   timestamps: true,
 });

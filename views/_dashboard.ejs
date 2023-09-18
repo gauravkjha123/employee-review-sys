@@ -4,11 +4,11 @@
 <div id="assignReviews-div">
 
     <%for(let AssignedReview of from){%>
-        <form action="completeReview" method="post">
+        <form action="/review/<%=AssignedReview.id %>/update" method="post">
             <label for="">To : <%=AssignedReview.to.name%></label>
             <textarea id="message" name="message" placeholder="Enter Review comments" required></textarea>
-            <input type="hidden" name="toUser" value="<%=AssignedReview.to.id%>">
-            <button type="button">Submit</button>
+            <input type="hidden" name="isReviewed" value="<%= !AssignedReview.isReviewed%>">
+            <button type="submit">Submit</button>
         </form>
             <%}%> 
 </div>

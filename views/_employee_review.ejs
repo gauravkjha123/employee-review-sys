@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/css/reviewesection.css">
+
+<div id="main-div">
+    <h1>All Reviews List</h1>
+    <hr>
+    <div id="headings">
+        <p>From</p>
+        <p>To</p>
+        <p>Message</p>
+    </div>
+    <hr>
+
+    <%for(let review of reviews){%>
+
+        <form action="/review/<%= review.id%>/update" method="post" style="padding-left: 0px;margin-left: -100px;">
+            <p><%=review.from.name%></p>
+            <p><%=review.to.name%></p>
+            <input type="text" name="message" placeholder="message" value="<%=review.message%>" required>
+            <button type="submit">Update</button>
+            <button type="button"  reviewId="<%= review.id%>" class="deleteReview">Delete</button>
+        </form>
+    <%}%>
+   
+</div>
+
+<script src="/js/employeeReviewView.js"></script>
+

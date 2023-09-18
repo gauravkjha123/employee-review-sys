@@ -6,27 +6,28 @@
     <div id="headings">
         <p>Name</p>
         <p>Email</p>
-        <p>Password</p>
     </div>
     <hr>
 
     <%for(let user of employees){%>
 
-        <div>
+        <form action="/user/<%= user.id%>/update" method="post" style="padding-left: 0px;margin-left: -100px;">
             <input type="text" name="name" placeholder="Name" value="<%=user.name%>" required>
             <input type="email" name="email" placeholder="Email" value="<%=user.email%>" required>
-            <button type="button">Update</button>
-            <button type="button">Delete</button>
-            <% if (user.permission === 'admin') { %>
-                <button type="button">
+            <button type="submit">Update</button>
+            <button type="button"  userId="<%= user.id%>" class="deleteUser">Delete</button>
+            <% if (user.role === 1) { %>
+                <button type="button" userId="<%= user.id%>" value="<%= user.role %>" class="userUpdate">
                     Remove Admin
                 </button>
             <% } else { %>
-                <button type="button">
+                <button type="button" style="background-color: green;" userId="<%= user.id%>" value="<%= user.role %>" class="userUpdate">
                     Make Admin
                 </button>
             <% } %>
-        </div>
+        </form>
     <%}%>
    
 </div>
+
+<script src="/js/employeeView.js"></script>
