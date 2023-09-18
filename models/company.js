@@ -5,7 +5,6 @@ const companySchema = mongoose.Schema({
     type: String,
     required: true,
     unique: true,
-
   },
   discription: {
     type: String,

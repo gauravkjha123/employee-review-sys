@@ -1,7 +1,7 @@
 <header id="main-header">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Employee Review System</a>
+            <a class="navbar-brand" href="#">ERS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -17,7 +17,7 @@
                         <a class="nav-link" href="/user/sign-in">Sign In</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/company/create-company">Create Company</a>
+                        <a class="nav-link" href="/company/create-company">Start Here</a>
                     </li>
                 <% } else { %>
                     <li class="nav-item">
@@ -28,10 +28,10 @@
                     </li>
                     <%if(locals.user.role==1) {%>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-primary" href="/review/all-reviews">Review Panel</a>
+                            <a class="nav-link btn btn-primary" href="/review/all-reviews">Reviews</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-primary" href="/user">Employee View</a>
+                            <a class="nav-link btn btn-primary" href="/user">Employees</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btn btn-primary" href="/review/assign">Assign Review</a>
