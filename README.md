@@ -31,9 +31,17 @@ npm install
 ```go
 sudo systemctl start mongod
 ```
-5. That's... it  run the application
+5. Create an .env.local file in your project root folder.
 ```go
-npm start
+And add your variables. See .env.production for
+ ```
+6. Create database 
+```go
+As you set in .env file for typeORM connection.
+```
+7. That's... it  run the application
+```go
+npm run dev
 ```
 ## File structure
 here you are looking at directory structure with root level files only.
