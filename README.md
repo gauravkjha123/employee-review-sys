@@ -67,3 +67,6 @@ employee-review-sys
 ├── routes
 └── views
 ```
+
+#### Deployment Link:
+ - Link : http://3.7.65.35/
